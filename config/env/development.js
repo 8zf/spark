@@ -28,8 +28,8 @@ module.exports = {
       "api/models",
       "api/controllers",
       "api/services",
-      "api/policies",
-      //"config/locales",
+      // "api/policies",
+      "config/locales",
       "config"
     ],
     ignored: [
