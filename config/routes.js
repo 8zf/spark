@@ -36,6 +36,12 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  // 'GET /order/:id': 'OrderController.query',
+  
+  'GET /signature/upload':{
+    view: 'signature/upload'
+  }
+
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
