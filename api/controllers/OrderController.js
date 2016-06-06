@@ -8,7 +8,7 @@
 module.exports = {
 
   query (req, res) {
-    var order;
+    var order
     Order.findOne({orderNumber: req.param('orderNumber')}).populate('sender').populate('receiver').then((result) => {
       order = result
       if (order) {
