@@ -10,7 +10,8 @@ module.exports = {
   upload (req,res) {
     req.file('file').upload({
       adapter: require('skipper-gridfs'),
-      uri: 'mongodb://localhost/spark.signature'
+      uri: 'mongodb://localhost/spark',
+      dbname: 'spark-file'
     }, function (err, filesUploaded) {
       if (err) return res.negotiate(err)
       console.log(filesUploaded)
