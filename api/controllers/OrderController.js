@@ -11,7 +11,11 @@ module.exports = {
     var order;
     Order.findOne({orderNumber: req.param('orderNumber')}).populate('sender').populate('receiver').then((result) => {
       order = result
-      return Route.find({order:order.id}).populate('location')
+      if (order) {
+        return Route.find({order: order.id}).populate('location')
+      } else {
+        res.send({order: null, routes: null})
+      }
     }).then((routes) => {
       res.send({
         order: order,
