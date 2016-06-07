@@ -20,13 +20,13 @@ module.exports = {
       type: 'string',
       required: true
     },
+    district: {
+      type: 'string'
+    },
     city: {
       type: 'string'
     },
-    state: {
-      type: 'string'
-    },
-    country: {
+    province: {
       type: 'string'
     }
   }

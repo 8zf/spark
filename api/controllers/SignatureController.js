@@ -5,9 +5,13 @@
  * @help        :: See http://sailsjs.org/#!/documentation/concepts/Controllers
  */
 
+var GridFs = require('skipper-gridfs')
+var gridFsAdapter = GridFs({uri: 'mongodb://localhost/spark', dbname: 'spark-file'})
+var receiving = gridFsAdapter.receive()
+
 module.exports = {
 
-  upload (req,res) {
+  upload (req, res) {
     req.file('file').upload({
       adapter: require('skipper-gridfs'),
       uri: 'mongodb://localhost/spark',

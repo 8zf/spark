@@ -33,11 +33,11 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
+    view: 'index'
   },
 
   // 'GET /order/:id': 'OrderController.query',
-  
+
   'GET /signature/upload':{
     view: 'signature/upload'
   }

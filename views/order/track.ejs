@@ -1,0 +1,42 @@
+<html>
+<head>
+  <title>Track | Spark Express</title>
+  <% include ../head/default.ejs %>
+</head>
+<body>
+<% include ../nav/default.ejs %>
+<div align="center">
+  <form class="form-inline" action="/order/track" method="get">
+    <div class="form-group">
+      <label class="sr-only" for="orderNumber">OrderNumber</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="orderNumber" placeholder="Order Number Here">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary ">Query</button>
+  </form>
+</div>
+<div class="container">
+  <table class="table">
+    <tr>
+      <td>
+        Order Status:
+      </td>
+      <td>
+        <%= order.status %>
+      </td>
+    </tr>
+    <% for(var i in routes) { %>
+    <tr>
+      <td style="width: 10%">
+        <img src="../images/logo.png" class="img-responsive">
+      </td>
+      <td <% if(i == 0){ %> style="color: rgb(1, 185, 95);" <% } %>>
+        <%= "["+routes[i].location.name+"] " + routes[i].context %>
+      </td>
+    </tr>
+    <%}%>
+  </table>
+</div>
+</body>
+</html>
