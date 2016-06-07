@@ -25,13 +25,14 @@ module.exports = {
             message: err
           });
         }
-        res.send({
-          ok: 1
-        });
+        // res.send({
+        //   ok: 1
+        // });
+        res.redirect('/')
       });
     })(req, res);
   },
-  
+
   info (req, res){
     res.send(req.user)
   }

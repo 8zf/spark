@@ -19,8 +19,16 @@ module.exports = {
     address: {
       type: 'string',
       required: true
+    },
+    district: {
+      type: 'string'
+    },
+    city: {
+      type: 'string'
+    },
+    province: {
+      type: 'string'
     }
-
   }
 };
 

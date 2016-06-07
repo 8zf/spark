@@ -36,6 +36,7 @@ module.exports.http = {
       'session',
       'passportInit',
       'passportSession',
+      'passportView',
     //   'myRequestLogger',
       'bodyParser',
       'handleBodyParserError',
@@ -58,7 +59,10 @@ module.exports.http = {
 
     passportInit: require('passport').initialize(),
     passportSession: require('passport').session(),
-    
+    passportView (req, res, next) {
+      res.locals.user = req.user
+      return next()
+    }
     // myRequestLogger: function (req, res, next) {
     //     console.log("Requested :: ", req.method, req.url);
     //     return next();

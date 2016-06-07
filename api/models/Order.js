@@ -20,6 +20,18 @@ module.exports = {
       model: 'customer',
       required: true
     },
+    content: {
+      type: 'string'
+    },
+    weight: {
+      type: 'integer'
+    },
+    unit: {
+      type: 'string'
+    },
+    price: {
+      type: 'string'
+    },
     signature: {
       type: 'string'
     }

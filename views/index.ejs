@@ -1,0 +1,20 @@
+<html>
+<head>
+  <title>Spark Express</title>
+  <% include head/default.ejs %>
+</head>
+<body>
+<% include nav/default.ejs %>
+<div align="center">
+  <form class="form-inline" action="/order/track" method="get">
+    <div class="form-group">
+      <label class="sr-only" for="orderNumber">OrderNumber</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="orderNumber" placeholder="Order Number Here">
+      </div>
+    </div>
+      <button type="submit" class="btn btn-primary ">Query</button>
+  </form>
+</div>
+</body>
+</html>
