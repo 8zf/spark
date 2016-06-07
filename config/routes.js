@@ -40,8 +40,12 @@ module.exports.routes = {
   
   'GET /signature/upload':{
     view: 'signature/upload'
+  },
+  
+  'GET /emerchant': {
+    view: 'emerchant'
   }
-
+  
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
