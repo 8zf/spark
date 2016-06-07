@@ -9,6 +9,8 @@
  * http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.http.html
  */
 
+var lusca = require('lusca')
+
 module.exports.http = {
 
   /****************************************************************************
@@ -34,6 +36,12 @@ module.exports.http = {
       'startRequestTimer',
       'cookieParser',
       'session',
+      'csrf',
+      'xframe',
+      'p3p',
+      'hsts',
+      'xssProtection',
+      'nosniff',
       'passportInit',
       'passportSession',
       'passportView',
@@ -57,6 +65,13 @@ module.exports.http = {
   *                                                                           *
   ****************************************************************************/
 
+    csrf: lusca.csrf(),
+    xframe: lusca.xframe('SAMEORIGIN'),
+    p3p: lusca.p3p('ABCDEF'),
+    hsts: lusca.hsts({ maxAge: 31536000 }),
+    xssProtection: lusca.xssProtection(true),
+    nosniff: lusca.nosniff(),
+    
     passportInit: require('passport').initialize(),
     passportSession: require('passport').session(),
     passportView (req, res, next) {
