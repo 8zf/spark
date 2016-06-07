@@ -1,0 +1,52 @@
+<!-- 传入参数order数组 -->
+
+<% include head.ejs %>
+<script>
+    var order = {
+        name: "hey you",
+        address: "I live here",
+        route: ""
+    };
+</script>
+<body>
+<div align="center">
+    <form class="form-inline" action="/order/query" method="get">
+        <div class="form-group">
+            <label class="sr-only" for="orderNumber">OrderNumber</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="OrderNumber" name="OrderNumber" placeholder="Order Number Here">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary ">Query</button>
+    </form>
+</div>
+
+<div class="container">
+    <table class="table">
+        <tr>
+            <td>
+                Order Status:
+            </td>
+            <td>
+                <%= order['order']['status'] %>
+            </td>
+        </tr>
+        <% for(i in order['routes']) { %>
+        <tr>
+            <td style="width: 10%">
+                <span class="glyphicon glyphicon-record" style="font-size: x-large; color: #30aad1" aria-hidden="true"></span>
+            </td>
+            <% if(i == 0) {%>
+            <td style="color: rgb(1, 185, 95) ">
+                <%= "["+order['routes'][i]['location']['name']+"] " + order['routes'][i]['context'] %>
+                <% continue;} %>
+            </td>
+            <td>
+                <%= "["+order['routes'][i]['location']['name']+"] " + order['routes'][i]['context'] %>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+</div>
+
+</body>

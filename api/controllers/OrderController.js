@@ -46,10 +46,10 @@ module.exports = {
       var order = yield Order.findOne({orderNumber: req.param('orderNumber')}).populate('sender').populate('receiver')
       if (!order) return res.send({order: null, routes: null})
       var routes = yield Route.find({order: order.id}).populate('location')
-      res.view('order/track', {
+      res.ok({
         order: order,
         routes: routes
-      })
+      }, 'order/track')
     })
   },
 
