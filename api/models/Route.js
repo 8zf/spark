@@ -11,6 +11,9 @@ module.exports = {
     order: {
       model: 'order'
     },
+    context: {
+      type: 'string'
+    },
     location: {
       model: 'location'
     }
