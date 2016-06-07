@@ -21,81 +21,31 @@
 
 <div class="container">
   <table class="table">
-    <tr style="">
-      <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
+    <% if(typeof order != 'undefined') { %>
+    <tr>
+      <td>
+        Order Status:
       </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-        <br/>
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-        <br/>
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-        <br/>
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-        <br/>
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-        <br/>
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-        <br/>
+      <td>
+        <%= order['order']['status'] %>
       </td>
     </tr>
+    <% for(i in order['routes']) { %>
     <tr>
       <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
+        <img src="../images/logo.png" class="img-responsive">
       </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
+      <% if(i == 0) {%>
+      <td style="color: rgb(1, 185, 95) ">
+        <%= "["+order['routes'][i]['location']['name']+"] " + order['routes'][i]['context'] %>
+        <% continue;} %>
       </td>
-    </tr>
-    <tr>
-      <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
-      </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
+      <td>
+        <%= "["+order['routes'][i]['location']['name']+"] " + order['routes'][i]['context'] %>
       </td>
     </tr>
-    <tr>
-      <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
-      </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
-      </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
-      </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
-      </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-      </td>
-    </tr>
-    <tr>
-      <td style="width: 10%">
-        <img src="images/logo.png" class="img-responsive">
-      </td>
-      <td style="width: 90%">
-        [Parcel Signed] [Signed by Xiaomai Gongshe] Thanks for using Spark Express, Enjoy a good day
-      </td>
-    </tr>
+    <% } %>
+    <% } %>
   </table>
 </div>
 
