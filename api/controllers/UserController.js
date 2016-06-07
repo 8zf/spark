@@ -32,7 +32,10 @@ module.exports = {
       });
     })(req, res);
   },
-
+  logout (req, res) {
+    req.logout();
+    res.redirect('/');
+  },
   info (req, res){
     res.send(req.user)
   }
