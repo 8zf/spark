@@ -18,21 +18,13 @@
 </div>
 <div class="container">
   <table class="table">
-    <tr>
-      <td>
-        Order Status:
+    <% for(var i = routes.length-1; i >= 0; i--) { %>
+    <tr style="color: #b6b6b6">
+      <td style="width: 10%;">
+        <span class="glyphicon glyphicon-record" <% if(i == routes.length-1){ %> style="font-size: x-large; color: rgb(1, 185, 95); left: -4px;" <% } %> aria-hidden="true"></span>
       </td>
-      <td>
-        <%= order.status %>
-      </td>
-    </tr>
-    <% for(var i in routes) { %>
-    <tr>
-      <td style="width: 10%">
-        <img src="../images/logo.png" class="img-responsive">
-      </td>
-      <td <% if(i == 0){ %> style="color: rgb(1, 185, 95);" <% } %>>
-        <%= "["+routes[i].location.name+"] " + routes[i].context %>
+      <td <% if(i == routes.length-1){ %> style="color: rgb(1, 185, 95);" <% } %>>
+        <%- "["+routes[i].location.name+"] " + routes[i].context + "<br/>" + "<span style='font-size: x-small'>" + routes[i].createdAt +"</span>" %>
       </td>
     </tr>
     <%}%>
