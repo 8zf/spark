@@ -42,7 +42,7 @@ module.exports.http = {
     //   'myRequestLogger',
       'bodyParser',
       'handleBodyParserError',
-      'csrf',
+      // 'csrf',
       'xframe',
       'p3p',
       'hsts',
@@ -72,7 +72,7 @@ module.exports.http = {
       return next()
     },
 
-    csrf: lusca.csrf({key:'_csrfToken'}),
+    // csrf: lusca.csrf({key:'_csrfToken'}),
     xframe: lusca.xframe('SAMEORIGIN'),
     p3p: lusca.p3p('ABCDEF'),
     hsts: lusca.hsts({ maxAge: 31536000 }),
