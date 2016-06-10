@@ -4,6 +4,44 @@
 </head>
 <body>
     <% include ../nav/default.ejs %>
+    <div class="container">
+        <table class="table">
+            <tr>
+                <td>
+                    Order Number:
+                </td>
+                <td>
+                    <%= order.orderNumber %>
+                </td>
+            </tr>
+            <tr style="">
+                <td>
+                    Sender:
+                </td>
+                <td>
+                    <%- order.sender.name + ",<span style='color: rgb(1, 185, 95)'> Address: </span>" + order.sender.address + ",<span style='color: rgb(1, 185, 95)'> Phone: </span>" + order.receiver.phone %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Receiver:
+                </td>
+                <td>
+                    <%- order.receiver.name + ",<span style='color: rgb(1, 185, 95)'> Address: </span>" + order.receiver.address + ",<span style='color: rgb(1, 185, 95)'> Phone: </span>" + order.receiver.phone %>
+                </td>
+            </tr>
+            <% var i; for(i = routes.length-1; i >= 0; i--) { %>
+            <tr style="color: #b6b6b6">
+                <td style="width: 10%;">
+                    <span class="glyphicon glyphicon-record" <% if(i == routes.length-1){ %> style="font-size: x-large; color: rgb(1, 185, 95); left: -4px;" <% } %> aria-hidden="true"></span>
+                </td>
+                <td <% if(i == routes.length-1){ %> style="color: rgb(1, 185, 95);" <% } %>>
+                    <%- "["+routes[i].location.name+"] " + routes[i].context + "<br/>" + "<span style='font-size: x-small'>" + routes[i].createdAt +"</span>" %>
+                </td>
+            </tr>
+            <%}%>
+        </table>
+    </div>
 
 </body>
 </html>

@@ -18,7 +18,15 @@
 </div>
 <div class="container">
   <table class="table">
-    <% for(var i = routes.length-1; i >= 0; i--) { %>
+    <tr>
+      <td>
+        Order Number
+      </td>
+      <td>
+        <%= order.orderNumber %>
+      </td>
+    </tr>
+    <% var i; for(i = routes.length-1; i >= 0; i--) { %>
     <tr style="color: #b6b6b6">
       <td style="width: 10%;">
         <span class="glyphicon glyphicon-record" <% if(i == routes.length-1){ %> style="font-size: x-large; color: rgb(1, 185, 95); left: -4px;" <% } %> aria-hidden="true"></span>
@@ -30,5 +38,24 @@
     <%}%>
   </table>
 </div>
+
+<div class="center-block" style="width: 320px;" align="center">
+  <form action="" method="post" class="form-inline">
+    <div class="form-group">
+      <input type="number" class="form-control" placeholder="Your phone number here" name="phoneNumber">
+      <button  class="btn btn-default btn-sm btn-success" type="submit" onclick="">
+        Get code
+      </button>
+    </div>
+    <br/><br/>
+    <div class="form-group">
+      <input type="text" class="form-control" name="validationCode" placeholder="Validation code here for detailed order information">
+      <button class="btn btn-info btn-sm" href="/order/detail">
+        More info
+      </button>
+    </div>
+  </form>
+</div>
+
 </body>
 </html>
